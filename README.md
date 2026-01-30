@@ -25,7 +25,7 @@ It implements a webhook receiver service that listens to GitHub events, stores t
 - **HTML + JavaScript (Polling UI)**
 
 ---
-
+---
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone the repository
@@ -83,7 +83,6 @@ Trigger events:
 - Merge Pull Requests
 
 ---
-
 ## Application Flow
 1. GitHub events are triggered from the `action-repo`
 2. GitHub sends webhook payloads to the Flask endpoint
