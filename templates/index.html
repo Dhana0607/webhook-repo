@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub Events</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h3>Latest GitHub Events</h3>
+  <ul id="events"></ul>
+
+  <script>
+    let lastTimestamp = null;
+
+    async function fetchEvents() {
+      const res = await fetch("/events");
+      const data = await res.json();
+      const list = document.getElementById("events");
+
+      data.forEach(event => {
+        if (!lastTimestamp || event.timestamp > lastTimestamp) {
+          const li = document.createElement("li");
+
+          if (event.action === "PUSH") {
+            li.innerText =
+              `${event.author} pushed to ${event.to_branch} on ${event.timestamp}`;
+          }
+
+          list.prepend(li);
+        }
+      });
+
+      if (data.length > 0) {
+        lastTimestamp = data[0].timestamp;
+      }
+    }
+
+    fetchEvents();
+    setInterval(fetchEvents, 15000);
+  </script>
+</body>
+</html>
