@@ -53,10 +53,15 @@ def github_webhook():
 
     return jsonify({"msg": "event ignored"}), 200
 
-@app.route("/events")
-def events():
-    return jsonify([])
+@app.route("/events", methods=["GET"])
+def get_events():
+    events = list(
+        collection.find({}, {"_id": 0})
+        .sort("timestamp", -1)
+        .limit(10)
+    )
+    return jsonify(events)
 
 
 if __name__ == "__main__" :
-    app.run(debug=True)
+    app.run(debug=False)
