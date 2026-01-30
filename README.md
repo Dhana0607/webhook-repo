@@ -81,8 +81,8 @@ Trigger events:
 - Push commits
 - Open Pull Requests
 - Merge Pull Requests
-
 ---
+
 ## Application Flow
 1. GitHub events are triggered from the `action-repo`
 2. GitHub sends webhook payloads to the Flask endpoint
