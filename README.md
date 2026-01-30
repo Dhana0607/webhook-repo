@@ -26,29 +26,19 @@ It implements a webhook receiver service that listens to GitHub events, stores t
 
 ---
 
-## 📁 Project Structure
-
-webhook-repo/
-├── app.py
-├── requirements.txt
-├── templates/
-│ └── index.html
-├── .env # not committed
-└── README.md
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Dhana0607/webhook-repo
 cd webhook-repo
+---
 
 ### 2️⃣ Create and activate virtual environment
 ```bash
 python -m venv venv
 venv\Scripts\activate   # Windows
+---
 
 ### 3️⃣ Install dependencies
 ```bash
