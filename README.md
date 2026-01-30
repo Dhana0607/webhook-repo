@@ -32,13 +32,11 @@ It implements a webhook receiver service that listens to GitHub events, stores t
 ```bash
 git clone https://github.com/Dhana0607/webhook-repo
 cd webhook-repo
----
 
 ### 2️⃣ Create and activate virtual environment
 ```bash
 python -m venv venv
 venv\Scripts\activate   # Windows
----
 
 ### 3️⃣ Install dependencies
 ```bash
@@ -83,6 +81,8 @@ Trigger events:
 - Push commits
 - Open Pull Requests
 - Merge Pull Requests
+
+---
 
 ## Application Flow
 1. GitHub events are triggered from the `action-repo`
